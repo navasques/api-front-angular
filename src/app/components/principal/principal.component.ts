@@ -18,4 +18,8 @@ export class PrincipalComponent {
   listar():void {
     this.servico.listar().subscribe(retorno => this.clientes = retorno);
   }
+
+  ngOnInit() {
+    this.listar();
+  }
 }
