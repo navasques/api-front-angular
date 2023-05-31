@@ -9,6 +9,8 @@ import { ClienteService } from 'src/app/service/cliente.service';
 })
 export class PrincipalComponent {
 
+  cliente = new Cliente();
+
   btnCadastro: boolean = true;
 
   constructor(private servico: ClienteService) {  }
