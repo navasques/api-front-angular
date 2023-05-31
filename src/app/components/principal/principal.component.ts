@@ -22,7 +22,13 @@ export class PrincipalComponent {
   }
 
   cadastrar():void {
-    this.servico.cadastrar(this.cliente).subscribe(retorno => {this.clientes.push(retorno);});
+    this.servico.cadastrar(this.cliente)
+    .subscribe(retorno => {
+      this.clientes.push(retorno);
+
+      this.cliente = new Cliente();
+      alert('Cliente cadastrado com sucesso!');
+    });
   }
 
   ngOnInit() {
