@@ -21,6 +21,10 @@ export class PrincipalComponent {
     this.servico.listar().subscribe(retorno => this.clientes = retorno);
   }
 
+  cadastrar():void {
+    this.servico.cadastrar(this.cliente).subscribe(retorno => {this.clientes.push(retorno);});
+  }
+
   ngOnInit() {
     this.listar();
   }
