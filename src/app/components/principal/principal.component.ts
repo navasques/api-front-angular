@@ -78,6 +78,14 @@ export class PrincipalComponent {
     })
   }
 
+  cancelar():void {
+    this.cliente = new Cliente();
+
+    this.btnCadastro = true;
+
+    this.tabela = true;
+  }
+
   ngOnInit() {
     this.listar();
   }
