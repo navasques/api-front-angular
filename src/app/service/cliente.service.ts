@@ -25,4 +25,8 @@ export class ClienteService {
   editar(obj: Cliente): Observable<Cliente> {
     return this.http.put<Cliente>(this.url, obj);
   }
+
+  excluir(codigo: number):Observable<void> {
+    return this.http.delete<void>(this.url + '/' + codigo);
+  }
 }
