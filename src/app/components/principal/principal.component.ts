@@ -59,6 +59,25 @@ export class PrincipalComponent {
     })
   }
 
+  excluir(): void {
+
+    this.servico.excluir(this.cliente.codigo)
+    .subscribe(retorno => {
+
+      let posicao = this.clientes.findIndex(obj => {
+        return obj.codigo == this.cliente.codigo;
+      });
+
+      this.clientes.splice(posicao, 1);
+
+      this.cliente = new Cliente();
+      this.btnCadastro = true;
+      this.tabela = true;
+
+      alert('Cliente excluído com sucesso!');
+    })
+  }
+
   ngOnInit() {
     this.listar();
   }
